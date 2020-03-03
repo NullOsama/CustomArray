@@ -17,19 +17,19 @@ int main()
     intArr[3] = 4;
     intArr[4] = 5;
 
+    intArr.push_back(0);
+    intArr.push_back(0);
+    intArr.push_back(0);
+    intArr.push_back(0);
 
-    intArr.push_back(6);
-    intArr.push_back(7);
-    intArr.push_back(8);
-    intArr.push_back(9);
-    intArr.push_back(10);
-    intArr.push_back(11);
-    intArr.push_back(12);
+
+
+    intArr.insert(2, -1);
 
 
     for (int num : intArr)
         cout << num << endl;
 
-    cout << endl;
+    //cout << intArr.size() << endl;
     system("pause");
 }

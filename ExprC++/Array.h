@@ -79,10 +79,23 @@ public:
 		if(_size+1 >= _capacity)
 		{
 			std::cout << "Under construction..." << std::endl;
+			_capacity = _capacity == 0 ? 1 : _capacity * 2;
+			T* newArr = new T[_capacity];
+
+
+			int i = 0;
+			for(;i<index;i++)
+				newArr[i] = arr[i];
+			newArr[index] = newElement;
+			_size++;
+			int j = i + 1;
+			for (; i < _size; i++, j++)
+				newArr[j] = arr[i];
+			arr = newArr;
 		}
 		else
 		{
-			int i = _size;
+			int i = ++_size;
 			for (; i > index; i--)
 			{
 				arr[i] = arr[i-1];
