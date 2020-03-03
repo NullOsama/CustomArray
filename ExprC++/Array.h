@@ -18,8 +18,8 @@ public:
 		if (_capacity < 0)
 			throw std::bad_array_new_length();
 
-		_capacity = capacity;
-		_size = _capacity;
+		_size = capacity;
+		_capacity = capacity + 5;
 		arr = new T[_capacity];
 	}
 	int size()
@@ -78,7 +78,16 @@ public:
 
 		if(_size+1 >= _capacity)
 		{
-
+			std::cout << "Under construction..." << std::endl;
+		}
+		else
+		{
+			int i = _size;
+			for (; i > index; i--)
+			{
+				arr[i] = arr[i-1];
+			}
+			arr[i] = newElement;
 		}
 	}
 
